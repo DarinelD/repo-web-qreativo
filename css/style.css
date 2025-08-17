@@ -68,7 +68,22 @@ h2 {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 5px;
+    padding: 10;
+}
+.main {
+    background-color: beige;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.main .divmap {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .s1 {
