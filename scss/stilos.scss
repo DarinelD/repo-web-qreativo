@@ -159,16 +159,18 @@ footer {
 
 
 // GRID AREA
-
 .gridArea1 {
   border-radius: 1%;
-  @include grid(repeat(3, 1fr), repeat(2, 1fr), 8px);
-  grid-template-areas:
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 
     "Taz1 Taz1 Taz2"
     "Taz3 Taz4 Taz4";
   width: 80vw;
   height: 80vh;
   margin: 0 auto;
+  gap: 8px;
   position: relative;
   background-color: rgb(113, 177, 34);
   padding: 7px;
@@ -180,17 +182,25 @@ footer {
     min-height: 0;
   }
 
-  .Taz1,
-  .Taz2,
-  .Taz3,
-  .Taz4 {
+  .Taz1 {
+    grid-area: Taz1;
     border-radius: 2%;
   }
 
   .Taz2 {
+    grid-area: Taz2;
+    border-radius: 2%;
     object-position: right;
   }
+
+  .Taz3 {
+    grid-area: Taz3;
+    border-radius: 2%;
+  }
+
   .Taz4 {
+    grid-area: Taz4;
+    border-radius: 2%;
     object-position: center;
   }
 }

@@ -129,11 +129,11 @@ footer .foter-redes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 8px;
   grid-template-areas: "Taz1 Taz1 Taz2" "Taz3 Taz4 Taz4";
   width: 80vw;
   height: 80vh;
   margin: 0 auto;
+  gap: 8px;
   position: relative;
   background-color: rgb(113, 177, 34);
   padding: 7px;
@@ -144,16 +144,22 @@ footer .foter-redes {
   height: 100%;
   min-height: 0;
 }
-.gridArea1 .Taz1,
-.gridArea1 .Taz2,
-.gridArea1 .Taz3,
-.gridArea1 .Taz4 {
+.gridArea1 .Taz1 {
+  grid-area: Taz1;
   border-radius: 2%;
 }
 .gridArea1 .Taz2 {
+  grid-area: Taz2;
+  border-radius: 2%;
   object-position: right;
 }
+.gridArea1 .Taz3 {
+  grid-area: Taz3;
+  border-radius: 2%;
+}
 .gridArea1 .Taz4 {
+  grid-area: Taz4;
+  border-radius: 2%;
   object-position: center;
 }
 
