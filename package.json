@@ -1,0 +1,23 @@
+{
+  "name": "pagina",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarinelD/repo-web-qreativo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarinelD/repo-web-qreativo/issues"
+  },
+  "homepage": "https://github.com/DarinelD/repo-web-qreativo#readme",
+  "devDependencies": {
+    "sass": "^1.91.0"
+  }
+}

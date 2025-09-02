@@ -1,0 +1,283 @@
+
+$font-main: 'PT Sans Narrow', sans-serif;
+$color-header-bg: blanchedalmond;
+$color-nav-hover-bg: rgba(161, 43, 155, 0.546);
+$color-nav-hover-text: aqua;
+$color-footer-bg: rgb(188, 70, 188);
+$color-footer-text: rgb(29, 191, 59);
+
+
+@mixin flex-center($justify: center, $align: center, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin grid($columns, $rows, $gap: 0) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-main;
+  font-weight: 200;
+}
+
+
+// HEADER
+
+header {
+  @include flex-center(space-between, center);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $color-header-bg;
+  padding: 10px 20px;
+
+  .lista23 {
+    display: block;
+    color: darkred;
+  }
+
+  nav {
+    width: 70%;
+
+    ul {
+      list-style: none;
+      @include flex-center(space-evenly, center);
+      gap: 15px;
+
+      li {
+        a {
+          text-decoration: none;
+          color: black;
+          font-size: 20px;
+          padding: 5px 10px;
+          border-radius: 5px;
+
+          &:hover {
+            background-color: $color-nav-hover-bg;
+            color: $color-nav-hover-text;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// TITULOS
+
+.h1 {
+  color: rgb(255, 234, 0);
+}
+
+h1 {
+  color: purple;
+}
+
+.mex {
+  color: rgb(14, 14, 14);
+  background-color: transparent;
+}
+
+h2 {
+  color: green;
+  background-color: black;
+  text-align: center;
+}
+
+
+// SECCIONES FLEX
+
+.main1,
+.main {
+  background-color: beige;
+  @include flex-center(space-around, center, wrap);
+  padding: 10px;
+
+  .divmap {
+    @include flex-center(center, center);
+  }
+}
+
+.s1 {
+  background-color: yellow;
+}
+.s2 {
+  background-color: darkorange;
+}
+
+.p32 {
+  text-align: center;
+  color: darkred;
+  padding: 15px;
+}
+
+
+// IMAGENES
+
+.absolute {
+  position: relative;
+  width: 100px;
+}
+
+.imgtz,
+.imgter {
+  width: 40%;
+}
+
+
+// FOOTER
+
+footer {
+  margin: 0 auto;
+  width: 100%;
+  background-color: $color-footer-bg;
+  color: $color-footer-text;
+  padding: 15px;
+
+  .foter-redes {
+    @include flex-center(space-around, center, wrap);
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+
+// GRID AREA
+
+.gridArea1 {
+  border-radius: 1%;
+  @include grid(repeat(3, 1fr), repeat(2, 1fr), 8px);
+  grid-template-areas:
+    "Taz1 Taz1 Taz2"
+    "Taz3 Taz4 Taz4";
+  width: 80vw;
+  height: 80vh;
+  margin: 0 auto;
+  position: relative;
+  background-color: rgb(113, 177, 34);
+  padding: 7px;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .Taz1,
+  .Taz2,
+  .Taz3,
+  .Taz4 {
+    border-radius: 2%;
+  }
+
+  .Taz2 {
+    object-position: right;
+  }
+  .Taz4 {
+    object-position: center;
+  }
+}
+
+
+// GRID LINES
+
+.seccionproductos {
+  .gridlines1 {
+    @include grid(repeat(4, 1fr), repeat(3, 0.5fr), 8px);
+    width: 75vw;
+    margin: 0 auto;
+    height: auto;
+    background-color: rgb(221, 49, 221);
+    justify-items: center;
+    padding: 10px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      min-height: 0;
+    }
+
+    .prod1 {
+      grid-column: 1/3;
+      grid-row: 1/2;
+    }
+    .prod2 {
+      grid-column: 3/5;
+      grid-row: 1/2;
+    }
+    .prod3 {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    .prod4 {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+    .prod5 {
+      grid-column: 3/5;
+      grid-row: 2/3;
+    }
+    .prod6 {
+      grid-column: 1/5;
+      grid-row: 3/4;
+    }
+  }
+}
+
+
+// RESPONSIVE
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .foter-redes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gridArea1 {
+    border-radius: 1%;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "Taz1"
+      "Taz2"
+      "Taz3"
+      "Taz4";
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .gridlines1 {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+}
