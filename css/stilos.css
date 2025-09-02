@@ -228,5 +228,55 @@ footer .foter-redes {
     grid-template-rows: auto;
   }
 }
+/* === Animaciones personalizadas === */
+@keyframes mover {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.animar-movimiento {
+  animation: mover 2s infinite ease-in-out;
+}
+
+/* Clase para texto que crece al pasar el cursor */
+.texto-hover {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.texto-hover:hover {
+  transform: scale(1.3);
+}
+
+.texto-hover1 {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.texto-hover1:hover {
+  transform: scale(1.8);
+}
+
+.img-fade {
+  transition: opacity 0.4s ease;
+}
+
+.img-fade:hover {
+  opacity: 0.6;
+}
+
+.img-rotate {
+  transition: transform 0.4s ease;
+}
+
+.img-rotate:hover {
+  transform: rotate(10deg) scale(1.5);
+}
 
 /*# sourceMappingURL=stilos.css.map */
