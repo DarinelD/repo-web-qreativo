@@ -48,12 +48,32 @@ header nav ul li a:hover {
   color: aqua;
 }
 
+.lista23{
+  text-decoration: underline;
+  color: black;
+}
+
+.pages1{
+  color: rgba(161, 43, 155, 0.546);
+}
+
+.menugaleria{
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+  padding: 10px;
+  color: black;
+  background-color: purple;
+}
+
 .h1 {
   color: rgb(255, 234, 0);
 }
 
 h1 {
   color: purple;
+  text-align: center;
 }
 
 .mex {
@@ -63,8 +83,22 @@ h1 {
 
 h2 {
   color: green;
-  background-color: black;
   text-align: center;
+  background-color: black;
+}
+
+ h2.gale{
+  color: darkred;
+  text-align: center;
+  padding: 10px;
+  font-size: 35px;
+  font-style: italic;
+  font-weight: bold;
+  border: solid darkred;
+  background-color: yellow;
+  border-radius: 30px;
+  width: 400px;
+  margin: 0 auto;
 }
 
 .main1,
@@ -97,6 +131,22 @@ h2 {
   color: darkred;
   padding: 15px;
 }
+.pfoter{
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+
+.fot2 {
+  text-align: center;
+  color: white;
+  font-size: 1vh;
+}
+.fot2 h2 {
+  color: white;
+  font-size: 2vh;
+  background-color: transparent;
+}
 
 .absolute {
   position: relative;
@@ -108,13 +158,6 @@ h2 {
   width: 40%;
 }
 
-footer {
-  margin: 0 auto;
-  width: 100%;
-  background-color: rgb(188, 70, 188);
-  color: rgb(29, 191, 59);
-  padding: 15px;
-}
 footer .foter-redes {
   display: flex;
   justify-content: space-around;
@@ -135,7 +178,6 @@ footer .foter-redes {
   margin: 0 auto;
   gap: 8px;
   position: relative;
-  background-color: rgb(113, 177, 34);
   padding: 7px;
 }
 .gridArea1 img {
@@ -151,13 +193,51 @@ footer .foter-redes {
 .gridArea1 .Taz2 {
   grid-area: Taz2;
   border-radius: 2%;
-  object-position: right;
+  object-position: center;
 }
 .gridArea1 .Taz3 {
   grid-area: Taz3;
   border-radius: 2%;
 }
 .gridArea1 .Taz4 {
+  grid-area: Taz4;
+  border-radius: 2%;
+  object-position: center;
+}
+
+.gridArea2 {
+  border-radius: 1%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "Taz1 Taz2 Taz2" "Taz3 Taz3 Taz4";
+  width: 80vw;
+  height: 80vh;
+  margin: 0 auto;
+  gap: 8px;
+  position: relative;
+  padding: 7px;
+}
+.gridArea2 img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+.gridArea2 .Taz1 {
+  grid-area: Taz1;
+  border-radius: 2%;
+}
+.gridArea2 .Taz2 {
+  grid-area: Taz2;
+  border-radius: 2%;
+  object-position: right;
+}
+.gridArea2 .Taz3 {
+  grid-area: Taz3;
+  border-radius: 2%;
+}
+.gridArea2 .Taz4 {
   grid-area: Taz4;
   border-radius: 2%;
   object-position: center;
@@ -171,7 +251,6 @@ footer .foter-redes {
   width: 75vw;
   margin: 0 auto;
   height: auto;
-  background-color: rgb(221, 49, 221);
   justify-items: center;
   padding: 10px;
 }
@@ -181,37 +260,48 @@ footer .foter-redes {
   min-height: 0;
 }
 .seccionproductos .gridlines1 .prod1 {
+  background-color: green;
+  border-style: solid;
   grid-column: 1/3;
   grid-row: 1/2;
 }
 .seccionproductos .gridlines1 .prod2 {
+  background-color: green;
+  border-style: solid;
   grid-column: 3/5;
   grid-row: 1/2;
 }
 .seccionproductos .gridlines1 .prod3 {
+  background-color: green;
+  border-style: solid;
   grid-column: 1/2;
   grid-row: 2/3;
 }
 .seccionproductos .gridlines1 .prod4 {
+  background-color: green;
+  border-style: solid;
   grid-column: 2/3;
   grid-row: 2/3;
 }
 .seccionproductos .gridlines1 .prod5 {
+  background-color: green;
+  border-style: solid;
   grid-column: 3/5;
   grid-row: 2/3;
 }
 .seccionproductos .gridlines1 .prod6 {
+  background-color: green;
+  border-style: solid;
   grid-column: 1/5;
   grid-row: 3/4;
 }
 
 @media (max-width: 768px) {
+ 
   header {
     flex-direction: column;
-    align-items: flex-start;
-  }
-  nav {
-    width: 100%;
+    align-items: center;
+    gap: 10px;
   }
   ul {
     flex-direction: column;
@@ -246,18 +336,35 @@ footer .foter-redes {
     transform: translateX(0);
   }
 }
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% { transform: scale(.9); }
+  100% { transform: scale(1); }
+}
+
 .animar-movimiento {
   animation: mover 2s infinite ease-in-out;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 8vw;
+  font-weight: bold;
 }
 
 /* Clase para texto que crece al pasar el cursor */
 .texto-hover {
-  text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; 
 }
 
 .texto-hover:hover {
-  transform: scale(1.3);
+  transform: scale(1.6);
+  color: green;
 }
 
 .texto-hover1 {
@@ -266,7 +373,8 @@ footer .foter-redes {
 }
 
 .texto-hover1:hover {
-  transform: scale(1.8);
+  transform: scale(1.8) ;
+  font-weight: bold;
 }
 
 .img-fade {
@@ -283,6 +391,18 @@ footer .foter-redes {
 
 .img-rotate:hover {
   transform: rotate(10deg) scale(1.5);
+}
+
+.texto-bounce{
+  view-timeline-name: --reveal;
+  animation-name: bounce-in;
+  animation-fill-mode: both;
+  animation-timeline: --reveal;
+  animation-range: entry 25% cover 50%;
+}
+
+.texto-bounce1{
+ animation: bounce-in 1s ease forwards;
 }
 
 /*# sourceMappingURL=stilos.css.map */

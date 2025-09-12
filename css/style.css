@@ -96,7 +96,8 @@ h2 {
 
 .p32 {
     text-align: center;
-    color: darkred;
+    color: rgb(0, 0, 0);
+    padding: 30px;
 }
 
 /* IMAGENES */
